@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+        "module": "ES2015",
+		"noImplicitAny": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"sourceMap": true,
+        "outDir": "./js/",
+        "lib": [
+            "es5",
+            "dom"
+        ],
+	},
+	"include": ["src/**/*.ts"]
+}
