@@ -31,6 +31,18 @@ export class MouseController {
                 action();
             });
         })
+        canvas.addEventListener('dragstart', () => {
+            this.state = MouseState.L_DOWN;
+            this.actions[MouseState.L_DOWN].forEach(action => {
+                action();
+            });
+        })
+        canvas.addEventListener('dragend', () => {
+            this.state = MouseState.L_UP;
+            this.actions[MouseState.L_UP].forEach(action => {
+                action();
+            });
+        })
         canvas.addEventListener('mouseleave', () => {
             this.state = MouseState.L_UP;
             this.actions[MouseState.L_UP].forEach(action => {

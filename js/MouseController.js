@@ -22,6 +22,18 @@ var MouseController = (function () {
                 action();
             });
         });
+        canvas.addEventListener('dragstart', function () {
+            _this.state = MouseState.L_DOWN;
+            _this.actions[MouseState.L_DOWN].forEach(function (action) {
+                action();
+            });
+        });
+        canvas.addEventListener('dragend', function () {
+            _this.state = MouseState.L_UP;
+            _this.actions[MouseState.L_UP].forEach(function (action) {
+                action();
+            });
+        });
         canvas.addEventListener('mouseleave', function () {
             _this.state = MouseState.L_UP;
             _this.actions[MouseState.L_UP].forEach(function (action) {
